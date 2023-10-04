@@ -1,2 +1,7 @@
-package PACKAGE_NAME;public class Student {
+public class Student {
+    String name;
+    int studentID;
+    City hometown;
+
+
 }
