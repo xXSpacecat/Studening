@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Student {
-    private ArrayList<Student> buddy;
+    private ArrayList<Student> buddy = new ArrayList<>();
     private String name;
     private int studentID;
     private City hometown;

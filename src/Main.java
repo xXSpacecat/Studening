@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         City home1 = new City("Gotham", "USA");
@@ -5,21 +7,36 @@ public class Main {
         City home3 = new City("Star City", "USA");
         City home4 = new City("Central City", "USA");
 
+        ArrayList<Student> classG = new ArrayList<>();
+        classG.add(new Student(34, "Damien", home1));
+        classG.add(new Student(2, "Richard", home1));
+        classG.add(new Student(32, "Tim", home1));
+        classG.add(new Student(47, "John", home2));
+        classG.add(new Student(12, "Connor", home2));
+        classG.add(new Student(16, "Jason", home1));
+        classG.add(new Student(23, "Biz", home2));
+        classG.add(new Student(5, "Roy", home3));
+        classG.add(new Student(3, "Wally", home4));
+        classG.add(new Student(43, "Bart", home4));
 
-        Student stud1 = new Student(34, "Damien", home1);
-        Student stud3 = new Student(2, "Richard", home1);
-        Student stud4 = new Student(16, "Jason", home1);
-        Student stud5 = new Student(32, "Tim", home1);
-        Student stud2 = new Student(47, "John", home2);
-        Student stud6 = new Student(12, "Connor", home2);
-        Student stud7 = new Student(23, "Biz", home2);
-        Student stud8 = new Student(5, "Roy", home3);
-        Student stud9 = new Student(3, "Wally", home4);
-        Student stud10 = new Student(43, "Bart", home4);
+        classG.get(0).setBuddy(classG.get(3));
+        classG.get(0).setBuddy(classG.get(9));
+        classG.get(1).setBuddy(classG.get(8));
+        classG.get(2).setBuddy(classG.get(4));
+        classG.get(3).setBuddy(classG.get(0));
+        classG.get(4).setBuddy(classG.get(2));
+        classG.get(5).setBuddy(classG.get(6));
+        classG.get(5).setBuddy(classG.get(7));
+        classG.get(6).setBuddy(classG.get(5));
+        classG.get(7).setBuddy(classG.get(5));
+        classG.get(8).setBuddy(classG.get(1));
+        classG.get(9).setBuddy(classG.get(0));
 
-        stud1.setBuddy(stud2);
-        System.out.println(stud1.getName() + "s buddy is ");
-        stud1.reportBuddyName();
+        for (int i = 0; i < classG.size(); i++) {
+            System.out.println(classG.get(i).getName() + "s buddy is ");
+            classG.get(i).reportBuddyName();
+        }
+
         System.out.println("Hello world!");
     }
 }
