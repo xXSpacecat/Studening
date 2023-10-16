@@ -5,6 +5,7 @@ public class Student {
     private String name;
     private int studentID;
     private City hometown;
+    private int grades;
 
     public void reportBuddyName() {
         for (int i = 0; i < buddy.size(); i++)
@@ -53,4 +54,15 @@ public class Student {
     public void setBuddy(Student buddy) {
         this.buddy.add(buddy);
     }
+
+    public void setAttributes() {
+        System.out.println("change? buddy:1, hometown:2, grades:3");
+        int change = Main.skelletor.nextInt();
+        switch (change) {
+            case 1:
+                System.out.println();
+
+        }
+    }
+
 }

@@ -1,18 +1,23 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
+    public static Scanner skelletor = new Scanner(System.in);
+
     public static void main(String[] args) {
-        City home1 = new City("Gotham", "USA");
-        City home2 = new City("Metropolis", "USA");
-        City home3 = new City("Star City", "USA");
-        City home4 = new City("Central City", "USA");
+
+
+        City home1 = new City("Gotham", "South USA");
+        City home2 = new City("Metropolis", "Central USA");
+        City home3 = new City("Star City", "North USA");
+        City home4 = new City("Central City", "Northwest USA");
 
         ArrayList<Student> classG = new ArrayList<>();
         classG.add(new Student(34, "Damien", home1));
         classG.add(new Student(2, "Richard", home1));
         classG.add(new Student(32, "Tim", home1));
         classG.add(new Student(47, "John", home2));
-        classG.add(new Student(12, "Connor", home2));
+        classG.add(new Student(12, "Conner", home2));
         classG.add(new Student(16, "Jason", home1));
         classG.add(new Student(23, "Biz", home2));
         classG.add(new Student(5, "Roy", home3));
@@ -37,6 +42,16 @@ public class Main {
             classG.get(i).reportBuddyName();
         }
 
-        System.out.println("Hello world!");
+
+        while (true) {
+            for (int i = 0; i < classG.size(); i++) {
+                System.out.println(classG.get(i).getName() + " : " + i);
+
+            }
+            System.out.println("access?(#)");
+            int num = skelletor.nextInt();
+
+        }
+
     }
 }
