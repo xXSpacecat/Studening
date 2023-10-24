@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Main {
     public static Scanner skelletor = new Scanner(System.in);
+    public static ArrayList<Student> classG = new ArrayList<>();
 
     public static void main(String[] args) {
 
@@ -12,7 +13,7 @@ public class Main {
         City home3 = new City("Star City", "North USA");
         City home4 = new City("Central City", "Northwest USA");
 
-        ArrayList<Student> classG = new ArrayList<>();
+
         classG.add(new Student(34, "Damien", home1));
         classG.add(new Student(2, "Richard", home1));
         classG.add(new Student(32, "Tim", home1));

@@ -60,9 +60,36 @@ public class Student {
         int change = Main.skelletor.nextInt();
         switch (change) {
             case 1:
+                System.out.println("add (1) or remove (2)? #");
+                int svar = Main.skelletor.nextInt();
+                if (svar == 1) {
+                    System.out.println("Name of new buddy?");
+                    String newName = Main.skelletor.next();
+                    for (Student stud : Main.classG) {
+                        if (newName.equalsIgnoreCase(stud.name)) {
+
+                        }
+                    }
+                } else {
+
+                }
+
+            case 2:
                 System.out.println();
+
+            case 3:
+                System.out.println();
+
 
         }
     }
 
+
+    public void changeBud() {
+        System.out.println("clear? add? 1:2");
+        int v = Main.skelletor.nextInt();
+        if (v == 1) {
+
+        }
+    }
 }
