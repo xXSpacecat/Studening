@@ -38,11 +38,6 @@ public class Main {
         classG.get(8).setBuddy(classG.get(1));
         classG.get(9).setBuddy(classG.get(0));
 
-        for (int i = 0; i < classG.size(); i++) {
-            System.out.println(classG.get(i).getName() + "s buddy is ");
-            classG.get(i).reportBuddyName();
-        }
-
 
         while (true) {
             for (int i = 0; i < classG.size(); i++) {
@@ -51,8 +46,14 @@ public class Main {
             }
             System.out.println("access?(#)");
             int num = skelletor.nextInt();
-
+            classG.get(num).setAttributes();
+            classG.get(num).reportBuddyName();
+            for (int i = 0; i < classG.size(); i++) {
+                System.out.println(classG.get(i).getName() + "s buddy is ");
+                classG.get(i).reportBuddyName();
+            }
         }
+
 
     }
 }

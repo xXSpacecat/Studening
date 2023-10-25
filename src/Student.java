@@ -8,9 +8,9 @@ public class Student {
     private int grades;
 
     public void reportBuddyName() {
-        for (int i = 0; i < buddy.size(); i++)
-            System.out.println(buddy.get(i).name);
-
+        for (Student student : buddy) {
+            System.out.println(student.name);
+        }
     }
 
     Student(int studentID, String name, City hometown) {
@@ -21,10 +21,10 @@ public class Student {
     }
 
     public Student getBuddy() {
-        for (int i = 0; i < buddy.size(); i++) {
-            return buddy.get(i);
+        for (int i = 0; i < this.buddy.size(); i++) {
+            return this.buddy.get(i);
         }
-        return buddy.get(0);
+        return this.buddy.get(0);
     }
 
     public int getStudentID() {
@@ -67,13 +67,20 @@ public class Student {
                     String newName = Main.skelletor.next();
                     for (Student stud : Main.classG) {
                         if (newName.equalsIgnoreCase(stud.name)) {
-
+                            buddy.add(stud);
+                            for (Student myStud : Main.classG) {
+                                if (this.name.equalsIgnoreCase(myStud.name)) {
+                                    stud.buddy.add(myStud);
+                                }
+                            }
                         }
+
                     }
+
                 } else {
 
                 }
-
+                getBuddy();
             case 2:
                 System.out.println();
 
