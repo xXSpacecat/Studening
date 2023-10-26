@@ -38,6 +38,8 @@ public class Main {
         classG.get(8).setBuddy(classG.get(1));
         classG.get(9).setBuddy(classG.get(0));
 
+        Student.sortByHome();
+
 
         while (true) {
             for (int i = 0; i < classG.size(); i++) {

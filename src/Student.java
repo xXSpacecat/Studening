@@ -20,13 +20,6 @@ public class Student {
 
     }
 
-    public Student getBuddy() {
-        for (int i = 0; i < this.buddy.size(); i++) {
-            return this.buddy.get(i);
-        }
-        return this.buddy.get(0);
-    }
-
     public int getStudentID() {
         return studentID;
     }
@@ -56,33 +49,13 @@ public class Student {
     }
 
     public void setAttributes() {
-        System.out.println("change? buddy:1, hometown:2, grades:3");
+        System.out.println("change? buddy:1, hometown:2, gradeAVG:3");
         int change = Main.skelletor.nextInt();
         switch (change) {
             case 1:
-                System.out.println("add (1) or remove (2)? #");
-                int svar = Main.skelletor.nextInt();
-                if (svar == 1) {
-                    System.out.println("Name of new buddy?");
-                    String newName = Main.skelletor.next();
-                    for (Student stud : Main.classG) {
-                        if (newName.equalsIgnoreCase(stud.name)) {
-                            buddy.add(stud);
-                            for (Student myStud : Main.classG) {
-                                if (this.name.equalsIgnoreCase(myStud.name)) {
-                                    stud.buddy.add(myStud);
-                                }
-                            }
-                        }
-
-                    }
-
-                } else {
-
-                }
-                getBuddy();
+                changeBuddy();
             case 2:
-                System.out.println();
+                changeHometown();
 
             case 3:
                 System.out.println();
@@ -92,11 +65,78 @@ public class Student {
     }
 
 
-    public void changeBud() {
-        System.out.println("clear? add? 1:2");
-        int v = Main.skelletor.nextInt();
-        if (v == 1) {
+    public void changeBuddy() {
+        System.out.println("add (1) or remove all(2)? #");
+        int svar = Main.skelletor.nextInt();
+        if (svar == 1) {
+            System.out.println("Name of new buddy?");
+            String newName = Main.skelletor.next();
+            for (Student stud : Main.classG) {
+                if (newName.equalsIgnoreCase(stud.name)) {
+                    buddy.add(stud);
+                    for (Student myStud : Main.classG) {
+                        if (this.name.equalsIgnoreCase(myStud.name)) {
+                            stud.buddy.add(myStud);
+                        }
+                    }
+                }
+
+            }
+
+        } else {
+            for (int i = 0; i < this.buddy.size(); i++) {
+                this.buddy.clear();
+            }
+            for (int i = 0; i < Main.classG.size(); i++) {
+                //if (){
+
+                // }
+
+            }
+        }
+    }
+
+    public void changeHometown() {
+        System.out.println("Name of new Hometown?");
+        String newHome = Main.skelletor.next();
+    }
+
+    public void changeGrade() {
+        System.out.println("Whats the new grade?");
+        grades = Main.skelletor.nextInt();
+    }
+
+    public static void sortByHome() {
+        System.out.println("gothamites:");
+        for (int i = 0; i < Main.classG.size(); i++) {
+            if (Main.classG.get(i).hometown.getName().equalsIgnoreCase("gotham")) {
+                System.out.println(Main.classG.get(i).name);
+            }
+        }
+
+        System.out.println("Metros:");
+        for (int i = 0; i < Main.classG.size(); i++) {
+            if (Main.classG.get(i).hometown.getName().equalsIgnoreCase("metropolis")) {
+                System.out.println(Main.classG.get(i).name);
+            }
+
+        }
+
+        System.out.println("Starries:");
+        for (int i = 0; i < Main.classG.size(); i++) {
+            if (Main.classG.get(i).hometown.getName().equalsIgnoreCase("star city")) {
+                System.out.println(Main.classG.get(i).name);
+            }
+
+        }
+
+        System.out.println("Cents:");
+        for (int i = 0; i < Main.classG.size(); i++) {
+            if (Main.classG.get(i).hometown.getName().equalsIgnoreCase("central city")) {
+                System.out.println(Main.classG.get(i).name);
+            }
 
         }
     }
+
 }
