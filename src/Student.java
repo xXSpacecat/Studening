@@ -20,10 +20,6 @@ public class Student {
 
     }
 
-    public int getStudentID() {
-        return studentID;
-    }
-
     public String getName() {
         return name;
     }
@@ -39,10 +35,7 @@ public class Student {
     public void setName(String name) {
         this.name = name;
     }
-
-    public void setStudentID(int studentID) {
-        this.studentID = studentID;
-    }
+    
 
     public void setBuddy(Student buddy) {
         this.buddy.add(buddy);
@@ -51,6 +44,7 @@ public class Student {
     public void setAttributes() {
         System.out.println("change? buddy:1, hometown:2, gradeAVG:3");
         int change = Main.skelletor.nextInt();
+        Main.skelletor.nextLine();
         switch (change) {
             case 1:
                 changeBuddy();
@@ -85,20 +79,27 @@ public class Student {
 
         } else {
             for (int i = 0; i < this.buddy.size(); i++) {
+                this.buddy.get(i).buddy.remove(this);
+
+            }
+            for (int i = 0; i < this.buddy.size(); i++) {
                 this.buddy.clear();
             }
-            for (int i = 0; i < Main.classG.size(); i++) {
-                //if (){
 
-                // }
-
-            }
         }
     }
 
     public void changeHometown() {
         System.out.println("Name of new Hometown?");
-        String newHome = Main.skelletor.next();
+        String newHome = Main.skelletor.nextLine();
+        System.out.println(newHome);
+        for (int i = 0; i < Main.cities.size(); i++) {
+            if (newHome.equalsIgnoreCase(Main.cities.get(i).getName())) {
+                this.hometown = Main.cities.get(i);
+
+            }
+        }
+        sortByHome();
     }
 
     public void changeGrade() {

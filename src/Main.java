@@ -4,26 +4,27 @@ import java.util.Scanner;
 public class Main {
     public static Scanner skelletor = new Scanner(System.in);
     public static ArrayList<Student> classG = new ArrayList<>();
+    public static ArrayList<City> cities = new ArrayList<>();
 
     public static void main(String[] args) {
 
 
-        City home1 = new City("Gotham", "South USA");
-        City home2 = new City("Metropolis", "Central USA");
-        City home3 = new City("Star City", "North USA");
-        City home4 = new City("Central City", "Northwest USA");
+        cities.add(new City("Gotham", "South USA"));
+        cities.add(new City("Metropolis", "Central USA"));
+        cities.add(new City("Star City", "North USA"));
+        cities.add(new City("Central City", "Northwest USA"));
 
 
-        classG.add(new Student(34, "Damien", home1));
-        classG.add(new Student(2, "Richard", home1));
-        classG.add(new Student(32, "Tim", home1));
-        classG.add(new Student(47, "John", home2));
-        classG.add(new Student(12, "Conner", home2));
-        classG.add(new Student(16, "Jason", home1));
-        classG.add(new Student(23, "Biz", home2));
-        classG.add(new Student(5, "Roy", home3));
-        classG.add(new Student(3, "Wally", home4));
-        classG.add(new Student(43, "Bart", home4));
+        classG.add(new Student(34, "Damien", cities.get(0)));
+        classG.add(new Student(2, "Richard", cities.get(0)));
+        classG.add(new Student(32, "Tim", cities.get(0)));
+        classG.add(new Student(47, "John", cities.get(1)));
+        classG.add(new Student(12, "Conner", cities.get(1)));
+        classG.add(new Student(16, "Jason", cities.get(0)));
+        classG.add(new Student(23, "Biz", cities.get(1)));
+        classG.add(new Student(5, "Roy", cities.get(2)));
+        classG.add(new Student(3, "Wally", cities.get(3)));
+        classG.add(new Student(43, "Bart", cities.get(3)));
 
         classG.get(0).setBuddy(classG.get(3));
         classG.get(0).setBuddy(classG.get(9));
